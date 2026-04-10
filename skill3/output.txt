@@ -1,0 +1,317 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.skill3:hibernate-hql-skill3 >-------------------
+[INFO] Building Hibernate HQL Skill 3 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact mysql:mysql-connector-java:jar:8.0.33 has been relocated to com.mysql:mysql-connector-j:jar:8.0.33: MySQL Connector/J artifacts moved to reverse-DNS compliant Maven 2+ coordinates.
+[INFO] 
+[INFO] --- exec:3.5.0:java (default-cli) @ hibernate-hql-skill3 ---
+Hibernate: 
+    select
+        count(product0_.id) as col_0_0_ 
+    from
+        products product0_
+Hibernate: 
+    select
+        product0_.id as id1_0_,
+        product0_.description as descript2_0_,
+        product0_.name as name3_0_,
+        product0_.price as price4_0_,
+        product0_.quantity as quantity5_0_ 
+    from
+        products product0_ 
+    order by
+        product0_.price ASC
+
+=== Products Sorted by Price (Ascending) ===
+Notebook - $5.99
+Pen Set - $12.5
+Mouse - $25.5
+Desk Lamp - $35.75
+Keyboard - $45.0
+Desk Chair - $150.0
+Monitor - $299.99
+Laptop - $899.99
+Hibernate: 
+    select
+        product0_.id as id1_0_,
+        product0_.description as descript2_0_,
+        product0_.name as name3_0_,
+        product0_.price as price4_0_,
+        product0_.quantity as quantity5_0_ 
+    from
+        products product0_ 
+    order by
+        product0_.price DESC
+
+=== Products Sorted by Price (Descending) ===
+Laptop - $899.99
+Monitor - $299.99
+Desk Chair - $150.0
+Keyboard - $45.0
+Desk Lamp - $35.75
+Mouse - $25.5
+Pen Set - $12.5
+Notebook - $5.99
+Hibernate: 
+    select
+        product0_.id as id1_0_,
+        product0_.description as descript2_0_,
+        product0_.name as name3_0_,
+        product0_.price as price4_0_,
+        product0_.quantity as quantity5_0_ 
+    from
+        products product0_ 
+    order by
+        product0_.quantity DESC
+
+=== Products Sorted by Quantity (Highest First) ===
+Notebook - Quantity: 100
+Pen Set - Quantity: 75
+Mouse - Quantity: 50
+Keyboard - Quantity: 30
+Desk Lamp - Quantity: 25
+Monitor - Quantity: 20
+Laptop - Quantity: 15
+Desk Chair - Quantity: 0
+Hibernate: 
+    select
+        product0_.id as id1_0_,
+        product0_.description as descript2_0_,
+        product0_.name as name3_0_,
+        product0_.price as price4_0_,
+        product0_.quantity as quantity5_0_ 
+    from
+        products product0_ 
+    order by
+        product0_.id limit ?
+
+=== First 3 Products ===
+Product [id=1, name=Laptop, price=899.99, quantity=15, description=Electronics]
+Product [id=2, name=Mouse, price=25.5, quantity=50, description=Electronics]
+Product [id=3, name=Keyboard, price=45.0, quantity=30, description=Electronics]
+Hibernate: 
+    select
+        product0_.id as id1_0_,
+        product0_.description as descript2_0_,
+        product0_.name as name3_0_,
+        product0_.price as price4_0_,
+        product0_.quantity as quantity5_0_ 
+    from
+        products product0_ 
+    order by
+        product0_.id limit ?,
+        ?
+
+=== Next 3 Products ===
+Product [id=4, name=Monitor, price=299.99, quantity=20, description=Electronics]
+Product [id=5, name=Desk Chair, price=150.0, quantity=0, description=Furniture]
+Product [id=6, name=Desk Lamp, price=35.75, quantity=25, description=Furniture]
+Hibernate: 
+    select
+        product0_.id as id1_0_,
+        product0_.description as descript2_0_,
+        product0_.name as name3_0_,
+        product0_.price as price4_0_,
+        product0_.quantity as quantity5_0_ 
+    from
+        products product0_ 
+    order by
+        product0_.id limit ?,
+        ?
+
+=== Page 2 (Size: 3) ===
+Product [id=4, name=Monitor, price=299.99, quantity=20, description=Electronics]
+Product [id=5, name=Desk Chair, price=150.0, quantity=0, description=Furniture]
+Product [id=6, name=Desk Lamp, price=35.75, quantity=25, description=Furniture]
+Hibernate: 
+    select
+        count(product0_.id) as col_0_0_ 
+    from
+        products product0_
+
+=== Total Number of Products ===
+Total Products: 8
+Hibernate: 
+    select
+        count(product0_.id) as col_0_0_ 
+    from
+        products product0_ 
+    where
+        product0_.quantity>0
+
+=== Products in Stock (Quantity > 0) ===
+Products in Stock: 7
+Hibernate: 
+    select
+        product0_.description as col_0_0_,
+        count(product0_.id) as col_1_0_ 
+    from
+        products product0_ 
+    group by
+        product0_.description
+
+=== Products Grouped by Description ===
+Electronics: 4 products
+Furniture: 2 products
+Stationery: 2 products
+Hibernate: 
+    select
+        min(product0_.price) as col_0_0_,
+        max(product0_.price) as col_1_0_ 
+    from
+        products product0_
+
+=== Price Range ===
+Minimum Price: $5.99
+Maximum Price: $899.99
+Hibernate: 
+    select
+        product0_.description as col_0_0_,
+        product0_.name as col_1_0_,
+        product0_.price as col_2_0_ 
+    from
+        products product0_ 
+    order by
+        product0_.description,
+        product0_.name
+
+=== Products Grouped by Description ===
+
+Electronics:
+  - Keyboard ($45.0)
+  - Laptop ($899.99)
+  - Monitor ($299.99)
+  - Mouse ($25.5)
+
+Furniture:
+  - Desk Chair ($150.0)
+  - Desk Lamp ($35.75)
+
+Stationery:
+  - Notebook ($5.99)
+  - Pen Set ($12.5)
+Hibernate: 
+    select
+        product0_.description as col_0_0_,
+        count(product0_.id) as col_1_0_,
+        avg(product0_.price) as col_2_0_,
+        sum(product0_.quantity) as col_3_0_ 
+    from
+        products product0_ 
+    group by
+        product0_.description
+
+=== Product Statistics by Category ===
+Electronics:
+  Count: 4
+  Avg Price: $317.62
+  Total Quantity: 115
+Furniture:
+  Count: 2
+  Avg Price: $92.88
+  Total Quantity: 25
+Stationery:
+  Count: 2
+  Avg Price: $9.25
+  Total Quantity: 175
+Hibernate: 
+    select
+        product0_.id as id1_0_,
+        product0_.description as descript2_0_,
+        product0_.name as name3_0_,
+        product0_.price as price4_0_,
+        product0_.quantity as quantity5_0_ 
+    from
+        products product0_ 
+    where
+        product0_.price between ? and ?
+
+=== Products Between $20.0 and $100.0 ===
+Mouse - $25.5
+Keyboard - $45.0
+Desk Lamp - $35.75
+Hibernate: 
+    select
+        product0_.id as id1_0_,
+        product0_.description as descript2_0_,
+        product0_.name as name3_0_,
+        product0_.price as price4_0_,
+        product0_.quantity as quantity5_0_ 
+    from
+        products product0_ 
+    where
+        product0_.name like ?
+
+=== Products Starting with 'D' ===
+Desk Chair
+Desk Lamp
+Hibernate: 
+    select
+        product0_.id as id1_0_,
+        product0_.description as descript2_0_,
+        product0_.name as name3_0_,
+        product0_.price as price4_0_,
+        product0_.quantity as quantity5_0_ 
+    from
+        products product0_ 
+    where
+        product0_.name like ?
+
+=== Products Ending with 'p' ===
+Laptop
+Desk Lamp
+Hibernate: 
+    select
+        product0_.id as id1_0_,
+        product0_.description as descript2_0_,
+        product0_.name as name3_0_,
+        product0_.price as price4_0_,
+        product0_.quantity as quantity5_0_ 
+    from
+        products product0_ 
+    where
+        product0_.name like ?
+
+=== Products Containing 'Desk' ===
+Desk Chair
+Desk Lamp
+Hibernate: 
+    select
+        product0_.id as id1_0_,
+        product0_.description as descript2_0_,
+        product0_.name as name3_0_,
+        product0_.price as price4_0_,
+        product0_.quantity as quantity5_0_ 
+    from
+        products product0_ 
+    where
+        length(product0_.name)=?
+
+=== Products with Name Length 5 ===
+Mouse (Length: 5)
+Hibernate: 
+    select
+        product0_.id as id1_0_,
+        product0_.description as descript2_0_,
+        product0_.name as name3_0_,
+        product0_.price as price4_0_,
+        product0_.quantity as quantity5_0_ 
+    from
+        products product0_ 
+    where
+        product0_.name like ?
+
+=== Products with Exactly 7 Characters ===
+Monitor
+Pen Set
+[WARNING] thread Thread[#36,mysql-cj-abandoned-connection-cleanup,5,com.skill3.demo.HQLDemo] was interrupted but is still alive after waiting at least 15000msecs
+[WARNING] thread Thread[#36,mysql-cj-abandoned-connection-cleanup,5,com.skill3.demo.HQLDemo] will linger despite being asked to die via interruption
+[WARNING] NOTE: 1 thread(s) did not finish despite being asked to via interruption. This is not a problem with exec:java, it is a problem with the running code. Although not serious, it should be remedied.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  15.675 s
+[INFO] Finished at: 2026-03-03T08:10:21+05:30
+[INFO] ------------------------------------------------------------------------

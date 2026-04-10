@@ -1,0 +1,6 @@
+Student ID      : 101
+Student Name    : Avinash
+Academic Year   : 2026
+Email           : avinash@klu.edu
+Phone Number    : 9876543210
+Course          : Spring Framework (6 months)

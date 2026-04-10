@@ -1,0 +1,12 @@
+/Users/avinashreddypadala/Documents/FS-Skill-2/HibernateInventorySpringBoot/src/main/java/com/inventory/HibernateInventorySpringBootApplication.java
+/Users/avinashreddypadala/Documents/FS-Skill-2/HibernateInventorySpringBoot/src/main/java/com/inventory/config/IdStrategyDemoRunner.java
+/Users/avinashreddypadala/Documents/FS-Skill-2/HibernateInventorySpringBoot/src/main/java/com/inventory/controller/ProductController.java
+/Users/avinashreddypadala/Documents/FS-Skill-2/HibernateInventorySpringBoot/src/main/java/com/inventory/entity/Product.java
+/Users/avinashreddypadala/Documents/FS-Skill-2/HibernateInventorySpringBoot/src/main/java/com/inventory/entity/ProductAuto.java
+/Users/avinashreddypadala/Documents/FS-Skill-2/HibernateInventorySpringBoot/src/main/java/com/inventory/entity/ProductIdentity.java
+/Users/avinashreddypadala/Documents/FS-Skill-2/HibernateInventorySpringBoot/src/main/java/com/inventory/entity/ProductSequence.java
+/Users/avinashreddypadala/Documents/FS-Skill-2/HibernateInventorySpringBoot/src/main/java/com/inventory/repository/ProductAutoRepository.java
+/Users/avinashreddypadala/Documents/FS-Skill-2/HibernateInventorySpringBoot/src/main/java/com/inventory/repository/ProductIdentityRepository.java
+/Users/avinashreddypadala/Documents/FS-Skill-2/HibernateInventorySpringBoot/src/main/java/com/inventory/repository/ProductRepository.java
+/Users/avinashreddypadala/Documents/FS-Skill-2/HibernateInventorySpringBoot/src/main/java/com/inventory/repository/ProductSequenceRepository.java
+/Users/avinashreddypadala/Documents/FS-Skill-2/HibernateInventorySpringBoot/src/main/java/com/inventory/service/ProductService.java

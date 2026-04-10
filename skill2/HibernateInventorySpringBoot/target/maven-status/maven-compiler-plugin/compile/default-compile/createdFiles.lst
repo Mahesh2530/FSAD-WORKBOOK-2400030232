@@ -1,0 +1,12 @@
+com/inventory/repository/ProductRepository.class
+com/inventory/controller/ProductController.class
+com/inventory/entity/ProductIdentity.class
+com/inventory/repository/ProductSequenceRepository.class
+com/inventory/HibernateInventorySpringBootApplication.class
+com/inventory/entity/ProductSequence.class
+com/inventory/repository/ProductIdentityRepository.class
+com/inventory/entity/Product.class
+com/inventory/service/ProductService.class
+com/inventory/entity/ProductAuto.class
+com/inventory/config/IdStrategyDemoRunner.class
+com/inventory/repository/ProductAutoRepository.class

@@ -1,0 +1,4 @@
+Student ID : 10
+Student Name : Avinash
+Gender : male
+Course : Course [id=301, course=Spring Core, dateOfCompletion=25-Jan-2026]
